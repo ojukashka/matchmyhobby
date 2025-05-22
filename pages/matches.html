@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Matches - MatchMyHobby</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/matches.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <div class="logo">
+          <a href="../index.html">(MATCHMYHOBBY'25)</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="matches-page">
+      <h1>Your Hobby Matches</h1>
+      <div class="filter-options">
+        <label for="match-hobby-filter">Filter by Hobby:</label>
+        <input type="text" id="match-hobby-filter" placeholder="e.g., Kochen" />
+        <label for="match-location-filter">Filter by Location:</label>
+        <input
+          type="text"
+          id="match-location-filter"
+          placeholder="e.g., Wien"
+        />
+        <button id="fetch-matches-btn" class="btn">Find Matches</button>
+      </div>
+      <section id="matches-container" class="matches-grid"></section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 MatchMyHobby</p>
+    </footer>
+    <script src="../js/app.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profile - MatchMyHobby</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+  </head>
+  <body>
+    <div class="profile-background-image">
+      <img src="../assets/images/user-profile-bg.jpg" alt="User background" />
+    </div>
+
+    <div class="profile-content-overlay">
+      <header class="profile-header">
+        <nav class="main-nav compact-nav">
+          <div class="logo">
+            <a href="../index.html">(MATCHMYHOBBY'25)</a>
+          </div>
+          <ul class="nav-links">
+            <li><a href="hobbies.html">Work</a></li>
+            <li><a href="matches.html">Models</a></li>
+            <li><a href="profile.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="profile-page">
+        <section class="user-info-main">
+          <h1 id="user-name-display">User Name</h1>
+          <p id="user-email-display">user@example.com</p>
+          <p id="user-location-display">Location</p>
+        </section>
+
+        <section class="user-hobbies-profile">
+          <h2>My Hobbies</h2>
+          <ul id="user-hobbies-list"></ul>
+        </section>
+
+        <section class="profile-gallery">
+          <div class="profile-gallery-item">
+            <img
+              src="../assets/images/profile-gallery1.jpg"
+              alt="User content 1"
+            />
+            <div class="gallery-item-caption">
+              <span>2022</span> PRADA <span>2023</span>
+            </div>
+          </div>
+          <div class="profile-gallery-item">
+            <img
+              src="../assets/images/profile-gallery2.jpg"
+              alt="User content 2"
+            />
+            <div class="gallery-item-caption">
+              <span>2023</span> PRADA <span>2023</span>
+            </div>
+          </div>
+          <div class="profile-gallery-item">
+            <img
+              src="../assets/images/profile-gallery3.jpg"
+              alt="User content 3"
+            />
+            <div class="gallery-item-caption">
+              <span>2023</span> PRADA <span>2023</span>
+            </div>
+          </div>
+          <div class="profile-gallery-item">
+            <img
+              src="../assets/images/profile-gallery4.jpg"
+              alt="User content 4"
+            />
+            <div class="gallery-item-caption">
+              <span>2023</span> PRADA <span>2023</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="edit-profile-section">
+          <h2>Edit Profile</h2>
+          <form id="edit-profile-form">
+            <div class="form-group">
+              <label for="edit-name">Name:</label>
+              <input type="text" id="edit-name" name="name" />
+            </div>
+            <div class="form-group">
+              <label for="edit-location">Location:</label>
+              <input type="text" id="edit-location" name="location" />
+            </div>
+            <div class="form-group">
+              <label for="edit-hobbies">Hobbies (comma-separated):</label>
+              <input type="text" id="edit-hobbies" name="hobbies" />
+            </div>
+            <button type="submit" class="btn">Update Profile</button>
+            <p class="form-message" id="edit-profile-message"></p>
+          </form>
+          <button id="logout-btn" class="btn btn-danger">Logout</button>
+          <button id="delete-profile-btn" class="btn btn-danger">
+            Delete Profile
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <script src="../js/app.js" type="module"></script>
+  </body>
+</html>

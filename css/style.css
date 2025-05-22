@@ -1,0 +1,358 @@
+/* css/style.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap'); /* Example font */
+
+:root {
+  --primary-color: #ff0000; /* Bright Red from images */
+  --secondary-color: #00ffff; /* Cyan accent */
+  --text-color: #ffffff;
+  --background-color: #000000;
+  --card-background: #1a1a1a;
+  --dark-grey: #333;
+  --light-grey: #f4f4f4;
+  --font-main: 'Montserrat', sans-serif; /* Using Montserrat as a modern, bold choice */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll from glitch effects */
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+header {
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.8
+  ); /* Semi-transparent background for nav */
+}
+
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-color);
+  letter-spacing: -1px; /* Similar to the design */
+}
+
+.main-nav .nav-links {
+  display: flex;
+}
+
+.main-nav .nav-links li {
+  margin-left: 20px;
+}
+
+.main-nav .nav-links a,
+.main-nav .auth-links a {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.main-nav .auth-links a {
+  border: 1px solid var(--text-color);
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.main-nav .auth-links a:hover,
+.main-nav .nav-links a:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+#nav-profile-icon {
+  font-size: 1.2rem;
+}
+
+main {
+  padding-top: 80px; /* Adjust based on header height */
+  min-height: calc(100vh - 120px); /* Full height minus header and footer */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--dark-grey);
+  color: var(--light-grey);
+  font-size: 0.9rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: var(--text-color);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: #cc0000; /* Darker red */
+}
+
+.btn-danger {
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+}
+.btn-danger:hover {
+  background-color: #00cccc;
+}
+
+/* Landing Page Specific Styles */
+.landing-page {
+  text-align: center;
+}
+
+.hero {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* For glitch text */
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.glitch-text {
+  font-size: 4rem; /* Adjust as needed */
+  font-weight: 900;
+  text-transform: uppercase;
+  position: relative;
+  color: var(--text-color);
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+/* Glitch effect inspired by image - simplified */
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(
+    data-text
+  ); /* If using JS to set data-text, or just use the text */
+  content: "(MATCHMYHOBBY'24)"; /* Hardcoded for simplicity */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--primary-color);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--secondary-color), 2px 2px var(--primary-color);
+  animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(10% 0 80% 0);
+  }
+  20% {
+    clip-path: inset(90% 0 5% 0);
+  }
+  40% {
+    clip-path: inset(40% 0 30% 0);
+  }
+  60% {
+    clip-path: inset(20% 0 70% 0);
+  }
+  80% {
+    clip-path: inset(85% 0 10% 0);
+  }
+  100% {
+    clip-path: inset(50% 0 25% 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(70% 0 10% 0);
+  }
+  20% {
+    clip-path: inset(5% 0 90% 0);
+  }
+  40% {
+    clip-path: inset(60% 0 20% 0);
+  }
+  60% {
+    clip-path: inset(30% 0 75% 0);
+  }
+  80% {
+    clip-path: inset(90% 0 2% 0);
+  }
+  100% {
+    clip-path: inset(45% 0 30% 0);
+  }
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns as in the image */
+  gap: 5px; /* Minimal gap */
+  padding: 0 2rem; /* Padding for the grid container */
+  margin-bottom: 2rem;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden; /* Ensure image fits */
+  background-color: var(--dark-grey); /* Placeholder bg */
+}
+
+.grid-item img {
+  width: 100%;
+  height: 150px; /* Or aspect ratio based, adjust */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.grid-item span {
+  /* Year text */
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 2px 5px;
+  font-size: 0.7rem;
+}
+
+.external-content {
+  padding: 2rem;
+  background-color: var(--card-background);
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 5px;
+  text-align: center;
+}
+.external-content h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+#quote-author {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: var(--secondary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  /* Tablet */
+  .glitch-text {
+    font-size: 3rem;
+  }
+  .image-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile */
+  .main-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main-nav .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .main-nav .nav-links li {
+    margin: 5px 0;
+    width: 100%;
+  }
+  .main-nav .nav-links a,
+  .main-nav .auth-links a {
+    display: block;
+    text-align: center;
+  }
+  .main-nav .auth-links {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+  }
+  .main-nav .auth-links a {
+    margin-left: 0;
+    flex: 1;
+    margin: 0 5px;
+  }
+
+  main {
+    padding-top: 150px; /* Increased padding for taller mobile nav */
+  }
+
+  .glitch-text {
+    font-size: 2.5rem;
+  }
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-item img {
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Small Mobile */
+  .glitch-text {
+    font-size: 2rem;
+  }
+  .image-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+  }
+  .grid-item img {
+    height: 180px; /* Taller for single column items */
+  }
+}

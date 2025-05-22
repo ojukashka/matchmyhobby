@@ -1,0 +1,78 @@
+/* css/auth.css */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px); /* Full height minus header and footer */
+  padding: 2rem;
+}
+
+.auth-container {
+  background: var(--card-background);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.auth-container h2 {
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--light-grey);
+  font-weight: 700;
+}
+
+.form-group input[type='text'],
+.form-group input[type='email'],
+.form-group input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--dark-grey);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 3px;
+}
+
+.auth-container .btn {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.auth-container p {
+  font-size: 0.9rem;
+  color: var(--light-grey);
+}
+
+.auth-container p a {
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+.auth-container p a:hover {
+  text-decoration: underline;
+}
+
+.form-message {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+.form-message.success {
+  color: greenyellow;
+}
+.form-message.error {
+  color: var(--primary-color);
+}

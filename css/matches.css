@@ -1,0 +1,113 @@
+/* css/matches.css */
+.matches-page {
+  padding: 2rem;
+  text-align: center;
+}
+
+.matches-page h1 {
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.filter-options {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--card-background);
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filter-options label {
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+.filter-options input[type='text'] {
+  padding: 8px;
+  border: 1px solid var(--dark-grey);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border-radius: 3px;
+  min-width: 150px;
+}
+
+.matches-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.match-card {
+  background: var(--card-background);
+  border: 1px solid var(--dark-grey);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.match-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.match-card img {
+  /* Assuming you add avatars for matches */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto; /* Centered avatar */
+  border: 2px solid var(--primary-color);
+}
+
+.match-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.match-card p {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: var(--light-grey);
+}
+
+.match-card p strong {
+  color: var(--text-color);
+}
+
+.match-card .hobbies-list span {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* Responsive for Matches Page */
+@media (max-width: 600px) {
+  .filter-options {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .filter-options input[type='text'],
+  .filter-options button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .match-card {
+    padding: 1rem;
+  }
+  .match-card h3 {
+    font-size: 1.1rem;
+  }
+}

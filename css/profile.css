@@ -1,0 +1,210 @@
+/* css/profile.css */
+body.profile-body-bg {
+  /* Add this class to body in profile.html if needed via JS */
+  background-color: var(--primary-color); /* The red background */
+  overflow: hidden; /* To contain the overlay */
+}
+
+.profile-background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Behind content */
+  opacity: 0.3; /* Make it a bit faded like in the design */
+}
+
+.profile-background-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.profile-content-overlay {
+  position: relative; /* To be on top of the background */
+  z-index: 1;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(255, 0, 0, 0.75); /* Red overlay from the image */
+  /* The image shows content in a column that is NOT red. Let's adjust */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content column */
+}
+
+.profile-page {
+  background-color: var(--background-color); /* Black for the content area */
+  color: var(--text-color);
+  width: 100%;
+  max-width: 600px; /* Max width for the content column, adjust as needed */
+  margin: 0 auto; /* Center the content area */
+  padding: 1rem;
+  min-height: calc(100vh - 60px); /* Adjust for header */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Add some depth */
+}
+
+.profile-header {
+  width: 100%;
+  background-color: transparent; /* Header on top of red bg */
+  position: sticky; /* Sticky on top of the content */
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 1rem; /* Compact padding */
+}
+.profile-header .main-nav {
+  max-width: 600px; /* Align with content width */
+  margin: 0 auto;
+}
+.profile-header .main-nav .logo a,
+.profile-header .main-nav .nav-links a {
+  font-size: 0.8rem; /* Smaller nav items */
+  color: var(--text-color);
+}
+.profile-header .main-nav .nav-links li {
+  margin-left: 10px;
+}
+
+.user-info-main {
+  text-align: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--dark-grey);
+  margin-bottom: 1.5rem;
+}
+
+.user-info-main h1 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+.user-info-main p {
+  font-size: 0.9rem;
+  color: var(--light-grey);
+  margin-bottom: 0.2rem;
+}
+
+.user-hobbies-profile h2,
+.edit-profile-section h2 {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#user-hobbies-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+#user-hobbies-list li {
+  display: inline-block; /* Or flex for better control */
+  background-color: var(--dark-grey);
+  color: var(--secondary-color);
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Profile Gallery - mimicking the style from the image */
+.profile-gallery {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Responsive grid */
+  gap: 10px;
+  margin-bottom: 2rem;
+  padding: 0 10px; /* Add some padding for items */
+}
+
+.profile-gallery-item {
+  background-color: var(--card-background); /* Dark background for items */
+  border: 1px solid var(--dark-grey);
+  position: relative;
+}
+
+.profile-gallery-item img {
+  width: 100%;
+  height: 250px; /* Adjust as needed */
+  object-fit: cover;
+}
+
+.gallery-item-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--text-color);
+  padding: 8px;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gallery-item-caption span {
+  font-weight: bold;
+}
+.gallery-item-caption span:nth-child(2) {
+  /* "PRADA" or similar text */
+  color: var(--secondary-color); /* Or primary, depending on preference */
+}
+
+.edit-profile-section {
+  background-color: #111; /* Slightly different bg for edit section */
+  padding: 1.5rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+.edit-profile-section .form-group {
+  margin-bottom: 1rem;
+}
+.edit-profile-section label {
+  color: var(--light-grey);
+}
+.edit-profile-section input {
+  background-color: var(--dark-grey);
+  border: 1px solid #444;
+}
+.edit-profile-section .btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+}
+#logout-btn,
+#delete-profile-btn {
+  margin-top: 0.5rem;
+  background-color: var(--primary-color);
+}
+#delete-profile-btn {
+  background-color: #550000; /* Darker red for delete */
+}
+#logout-btn:hover,
+#delete-profile-btn:hover {
+  opacity: 0.8;
+}
+
+/* Profile Page specific responsive */
+/* The design for profile.jpg is inherently mobile-like. */
+/* We ensure the main content column (.profile-page) doesn't get too wide on desktop */
+
+@media (min-width: 769px) {
+  /* Desktop view for Profile */
+  .profile-content-overlay {
+    /* On larger screens, the red might be too overwhelming if full screen.
+           We might contain it or reduce its impact.
+           For now, it's full screen with a centered content column. */
+  }
+  .profile-page {
+    padding: 2rem; /* More padding on larger screens */
+  }
+  .profile-gallery {
+    grid-template-columns: repeat(2, 1fr); /* Max 2 columns for this style */
+  }
+}

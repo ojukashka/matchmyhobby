@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discover Hobbies - MatchMyHobby</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/hobbies.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav">
+        <div class="logo">
+          <a href="../index.html">(MATCHMYHOBBY'25)</a>
+        </div>
+        <div class="nav-center-year">©2025</div>
+        <ul class="nav-links">
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="matches.html">Matches</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="profile.html" id="nav-profile-icon">👤</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="hobbies-page">
+      <aside class="filters-sidebar">
+        <h3>LOCATIONS</h3>
+        <ul id="location-filter-list">
+          <li><a href="#" data-location="Europe">Europe</a></li>
+          <li><a href="#" data-location="North America">North America</a></li>
+          <li><a href="#" data-location="Australia">Australia</a></li>
+        </ul>
+        <h3>HOBBIES</h3>
+        <ul id="hobby-filter-list">
+          <li><a href="#" data-hobby="Photography">Photography</a></li>
+          <li><a href="#" data-hobby="Painting">Painting</a></li>
+          <li><a href="#" data-hobby="Music">Music</a></li>
+          <li><a href="#" data-hobby="Sports">Sports</a></li>
+        </ul>
+        <button id="apply-filters-btn" class="btn">Apply Filters</button>
+      </aside>
+
+      <section class="hobby-gallery-container">
+        <div class="hobby-gallery">
+          <div class="hobby-item">
+            <img src="../assets/images/hobby-choice1.jpg" alt="Hobby 1" />
+            <div class="hobby-info">
+              <span class="hobby-name">MARTHA</span>
+              <span class="hobby-location">Europe</span>
+            </div>
+          </div>
+          <div class="hobby-item">
+            <img src="../assets/images/hobby-choice2.jpg" alt="Hobby 2" />
+            <div class="hobby-info">
+              <span class="hobby-name">JOHN</span>
+              <span class="hobby-location">North America</span>
+            </div>
+          </div>
+          <div class="hobby-item">
+            <img src="../assets/images/hobby-choice3.jpg" alt="Hobby 3" />
+            <div class="hobby-info">
+              <span class="hobby-name">AIKO</span>
+              <span class="hobby-location">Asia</span>
+            </div>
+          </div>
+          <div class="hobby-item">
+            <img src="../assets/images/hobby-choice4.jpg" alt="Hobby 4" />
+            <div class="hobby-info">
+              <span class="hobby-name">DAVID</span>
+              <span class="hobby-location">Europe</span>
+            </div>
+          </div>
+        </div>
+        <button class="scroll-arrow prev-arrow" id="prev-hobby">&lt;</button>
+        <button class="scroll-arrow next-arrow" id="next-hobby">&gt;</button>
+      </section>
+      <section id="external-api-activity" class="external-content">
+        <h2>Bored? Try this activity!</h2>
+        <p id="activity-text">Loading activity...</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 MatchMyHobby</p>
+    </footer>
+    <script src="../js/app.js" type="module"></script>
+  </body>
+</html>
