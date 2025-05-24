@@ -6,6 +6,11 @@ const User = require("../models/User");
 
 const JWT_SECRET = "dein_geheimes_jwt_schluessel"; // Später in .env speichern
 
+router.get("/test", (req, res) => {
+  res.json({ message: "Users Route funktioniert!" });
+});
+
+
 // Alle Nutzer abrufen
 router.get("/", async (req, res) => {
   try {
